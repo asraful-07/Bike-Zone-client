@@ -22,7 +22,7 @@ export default function Footer() {
           {/* Top Section */}
           <div>
             <Image
-              src="/images/others/footer-logo.png" // Update with your bike logo
+              src="/images/others/footer-logo.png"
               alt="BikeHub Logo"
               width={160}
               height={40}
