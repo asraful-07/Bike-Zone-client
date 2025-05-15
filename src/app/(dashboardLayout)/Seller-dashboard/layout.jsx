@@ -3,11 +3,12 @@ import Navbar from "@/app/components/Shared/Navbar";
 
 export default function DashboardLayout({ children }) {
   return (
-    <div className="flex min-h-screen">
+    <div className="min-h-screen">
       {/* Sidebar */}
       <Sidebar />
 
-      <div className="flex-1 flex flex-col">
+      {/* Content shifted right to make space for sidebar */}
+      <div className="md:pl-72 flex flex-col min-h-screen">
         {/* Navbar */}
         <Navbar />
 
