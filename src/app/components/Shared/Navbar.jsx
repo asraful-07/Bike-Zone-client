@@ -13,6 +13,20 @@ const Navbar = () => {
     return pathname === href || (href !== "/" && pathname.startsWith(href));
   };
 
+  // List of paths where footer should be hidden
+  const hiddenPaths = [
+    "Login",
+    "SignUp",
+    "Admin-dashboard",
+    "Seller-dashboard",
+    "User-dashboard",
+  ];
+
+  // Check if current path should hide footer
+  if (hiddenPaths.some((path) => pathname.includes(path))) {
+    return null;
+  }
+
   return (
     <nav className="bg-primary text-white px-4 py-3 shadow-md sticky top-0 z-50">
       <div className="container mx-auto flex items-center justify-between">
