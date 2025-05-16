@@ -171,14 +171,32 @@ const BikeForm = () => {
               required: "Description is required",
             })}
             className="w-full border rounded-md px-3 py-2"
+            placeholder="Enter detailed bike description..."
           ></textarea>
           {errors.description && (
             <p className="text-red-500 text-sm">{errors.description.message}</p>
           )}
         </div>
 
-        {/* Submit Button */}
+        {/* Features */}
+        <div>
+          <label className="block mb-1 font-semibold">Features</label>
+          <textarea
+            {...register("features", { required: "Features are required" })}
+            className="w-full p-2 rounded-lg border-2 border-black focus:outline-none focus:ring-2 focus:ring-red-600 bg-gray-100 placeholder:text-gray-500"
+            rows="5"
+            placeholder={`Enter bike features (one per line) e.g.:
+Disk Brakes
+Fuel Injection
+LED Headlight
+Sporty Design`}
+          ></textarea>
+          {errors.features && (
+            <p className="text-red-500 text-sm">{errors.features.message}</p>
+          )}
+        </div>
 
+        {/* Submit Button */}
         <button
           type="submit"
           className="w-full py-2 rounded-md bg-orange-600 text-white font-semibold hover:bg-orange-700"
