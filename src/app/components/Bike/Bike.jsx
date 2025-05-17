@@ -1,16 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Bike = () => {
   const [bikes, setBikes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
 
   useEffect(() => {
     // Initialize AOS
@@ -85,17 +82,19 @@ const Bike = () => {
               <div className="p-5">
                 <div className="flex justify-between items-center">
                   <div>
-                    <p className="text-gray-600">Starting from</p>
-                    <p className="text-2xl font-bold text-orange-600">
+                    <p className="text-2xl font-bold text-orange-600 line-through">
                       ${bike.regularPrice}
                     </p>
+                    <p className="text-2xl font-bold text-orange-600">
+                      ${bike.discountPrice}
+                    </p>
                   </div>
-                  <button
-                    className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-colors"
-                    onClick={() => router.push(`/bikes/${bike._id}`)}
-                  >
-                    View Details
-                  </button>
+
+                  <Link href={`/bikes/${bike._id}`}>
+                    <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-colors">
+                      View Details
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
