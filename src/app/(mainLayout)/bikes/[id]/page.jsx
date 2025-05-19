@@ -1,4 +1,3 @@
-// src/app/bikes/[id]/page.jsx
 import { FaHeart, FaShoppingCart, FaBicycle } from "react-icons/fa";
 
 const Page = async ({ params }) => {
