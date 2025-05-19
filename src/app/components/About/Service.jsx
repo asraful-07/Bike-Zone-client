@@ -17,13 +17,14 @@ const Service = () => {
           What We Offer
         </h5>
         <h2 className="text-3xl font-bold w-3/4 mx-auto">
-          Explore Our Premium Bike Services – From Purchase to Protection!
+          Your One-Stop Destination for All Bike Needs – Sales, Service, Support
+          & More!
         </h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center p-12">
-        {/* Bike Repair & Maintenance */}
-        <div className="bg-blue-50 p-6 rounded-lg shadow-md max-w-md border border-blue-200 h-64">
+        {/* Repair & Maintenance */}
+        <div className="bg-blue-50 p-6 rounded-lg shadow-md max-w-md border border-blue-200 h-80 overflow-y-auto">
           <div className="flex items-center gap-3">
             <FaTools className="text-blue-500 text-3xl" />
             <h3 className="text-xl font-bold text-gray-800">
@@ -31,80 +32,97 @@ const Service = () => {
             </h3>
           </div>
           <p className="mt-3 text-gray-600">
-            Keep your ride smooth with our expert <b>repair and maintenance</b>
-            services. From engine tuning to tire replacement – we’ve got you
-            covered.
+            Our experienced mechanics are ready to keep your bike in top
+            condition. Whether it's routine maintenance, engine diagnostics, oil
+            changes, brake repair, or emergency fixes—we’ve got your back. We
+            use only genuine parts and offer transparent pricing. Schedule your
+            service online or visit our nearest service point for hassle-free
+            maintenance.
           </p>
         </div>
 
-        {/* Bike Sales & Showroom */}
-        <div className="bg-red-50 p-6 rounded-lg shadow-md max-w-md border border-red-200 h-64">
+        {/* Bike Sales */}
+        <div className="bg-red-50 p-6 rounded-lg shadow-md max-w-md border border-red-200 h-80 overflow-y-auto">
           <div className="flex items-center gap-3">
             <FaMotorcycle className="text-red-500 text-3xl" />
             <h3 className="text-xl font-bold text-gray-800">
-              Bike Sales & Showroom
+              New & Used Bike Sales
             </h3>
           </div>
           <p className="mt-3 text-gray-600">
-            Discover a wide range of <b>new and used bikes</b> from trusted
-            brands. Visit our virtual showroom and find your perfect match.
+            Browse a wide range of bikes, from brand-new models to certified
+            pre-owned ones. We offer flexible payment plans, EMI options, and
+            exchange deals. Every used bike goes through a 100-point inspection
+            process. Visit our online showroom, check 360° views, and compare
+            specs side-by-side before making your dream purchase.
           </p>
         </div>
 
-        {/* Online Booking & Delivery */}
-        <div className="bg-green-50 p-6 rounded-lg shadow-md max-w-md border border-green-200 h-64">
+        {/* Online Booking */}
+        <div className="bg-green-50 p-6 rounded-lg shadow-md max-w-md border border-green-200 h-80 overflow-y-auto">
           <div className="flex items-center gap-3">
             <FaShoppingCart className="text-green-500 text-3xl" />
             <h3 className="text-xl font-bold text-gray-800">
-              Easy Booking & Delivery
+              Easy Online Booking & Doorstep Delivery
             </h3>
           </div>
           <p className="mt-3 text-gray-600">
-            Book your favorite bike <b>online</b> and get it delivered
-            <b> to your doorstep</b> with our fast and reliable delivery
-            service.
+            Buy or book a bike with just a few clicks. Our user-friendly
+            platform ensures a seamless experience. Choose your bike, make a
+            secure payment, and we’ll deliver it right to your doorstep—fast and
+            safe. We also offer pre-booking for upcoming models and reservation
+            for test rides at your convenience.
           </p>
         </div>
 
-        {/* Route Planning Assistance */}
-        <div className="bg-yellow-50 p-6 rounded-lg shadow-md max-w-md border border-yellow-200 h-64">
+        {/* Route Planning */}
+        <div className="bg-yellow-50 p-6 rounded-lg shadow-md max-w-md border border-yellow-200 h-80 overflow-y-auto">
           <div className="flex items-center gap-3">
             <FaMapMarkedAlt className="text-yellow-500 text-3xl" />
             <h3 className="text-xl font-bold text-gray-800">
-              Route & Trip Planning
+              Smart Route & Trip Planning
             </h3>
           </div>
           <p className="mt-3 text-gray-600">
-            Get personalized <b>route planning</b> for your bike adventures.
-            Discover the best roads, pit stops, and scenic routes with us.
+            Going on a long ride or weekend trip? Let us help you plan the
+            perfect route with our advanced route planner. Get traffic updates,
+            fuel station locations, repair shops, rest areas, and weather info
+            all in one place. Whether you're a city commuter or an adventure
+            tourer, we’ll make sure your ride is smooth and well-prepared.
           </p>
         </div>
 
         {/* Insurance & Safety */}
-        <div className="bg-purple-50 p-6 rounded-lg shadow-md max-w-md border border-purple-200 h-64">
+        <div className="bg-purple-50 p-6 rounded-lg shadow-md max-w-md border border-purple-200 h-80 overflow-y-auto">
           <div className="flex items-center gap-3">
             <FaShieldAlt className="text-purple-500 text-3xl" />
             <h3 className="text-xl font-bold text-gray-800">
-              Insurance & Safety
+              Bike Insurance & Safety Coverage
             </h3>
           </div>
           <p className="mt-3 text-gray-600">
-            Ride worry-free with our <b>insurance options</b> and safety
-            packages. We care about your protection on every journey.
+            We offer comprehensive insurance plans including third-party,
+            comprehensive, and theft protection. Our partners provide paperless
+            claims, free towing, and instant coverage. Alongside, grab
+            top-quality safety gear like helmets, jackets, and gloves at
+            discounted prices for our customers.
           </p>
         </div>
 
-        {/* Customer Support */}
-        <div className="bg-orange-50 p-6 rounded-lg shadow-md max-w-md border border-orange-200 h-64">
+        {/* 24/7 Support */}
+        <div className="bg-orange-50 p-6 rounded-lg shadow-md max-w-md border border-orange-200 h-80 overflow-y-auto">
           <div className="flex items-center gap-3">
             <FaHandshake className="text-orange-500 text-3xl" />
             <h3 className="text-xl font-bold text-gray-800">
-              24/7 Customer Support
+              24/7 Customer Support & Roadside Assistance
             </h3>
           </div>
           <p className="mt-3 text-gray-600">
-            Need help? Our <b>support team</b> is available round-the-clock to
-            assist you with any issue, big or small.
+            Got questions, issues, or emergencies? Our support team is available
+            round-the-clock via phone, chat, or email. Plus, with our roadside
+            assistance feature, you can get help in case of a breakdown, flat
+            tire, or battery issue—anytime, anywhere. Your satisfaction and
+            safety are our top priorities.
           </p>
         </div>
       </div>
