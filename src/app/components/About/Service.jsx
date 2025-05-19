@@ -1,12 +1,12 @@
 "use client";
 
 import {
-  FaHeadset,
-  FaUserTie,
-  FaLaptopCode,
-  FaComments,
-  FaFileAlt,
-  FaProjectDiagram,
+  FaTools,
+  FaMotorcycle,
+  FaShoppingCart,
+  FaMapMarkedAlt,
+  FaShieldAlt,
+  FaHandshake,
 } from "react-icons/fa";
 
 const Service = () => {
@@ -14,109 +14,97 @@ const Service = () => {
     <div className="container mx-auto">
       <div className="text-center mb-8 mt-20">
         <h5 className="text-green-600 font-semibold text-sm uppercase bg-green-200 inline-block px-4 py-2 rounded-full mb-5">
-          What's Included in the Course
+          What We Offer
         </h5>
         <h2 className="text-3xl font-bold w-3/4 mx-auto">
-          Unlimited Help & Guidelines – Even Screen Sharing on Google Meet for
-          Problem Solving! Join Now!
+          Explore Our Premium Bike Services – From Purchase to Protection!
         </h2>
       </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center p-12">
-        {/* Unlimited Support Card */}
+        {/* Bike Repair & Maintenance */}
         <div className="bg-blue-50 p-6 rounded-lg shadow-md max-w-md border border-blue-200 h-64">
           <div className="flex items-center gap-3">
-            <FaHeadset className="text-blue-500 text-3xl" />
+            <FaTools className="text-blue-500 text-3xl" />
             <h3 className="text-xl font-bold text-gray-800">
-              Unlimited Support
+              Repair & Maintenance
             </h3>
           </div>
           <p className="mt-3 text-gray-600">
-            We will be there for you as long as you struggle. Get answers to all
-            your questions within 24 hours. On holidays, you can join{" "}
-            <b>Google Meet</b> sessions to share your screen and get
-            problem-solving help. You'll also receive{" "}
-            <b>live one-on-one sessions</b> and <b>special guidelines</b>.
+            Keep your ride smooth with our expert <b>repair and maintenance</b>
+            services. From engine tuning to tire replacement – we’ve got you
+            covered.
           </p>
         </div>
 
-        {/* Basic to Job Placement */}
+        {/* Bike Sales & Showroom */}
         <div className="bg-red-50 p-6 rounded-lg shadow-md max-w-md border border-red-200 h-64">
           <div className="flex items-center gap-3">
-            <FaUserTie className="text-red-500 text-3xl" />
+            <FaMotorcycle className="text-red-500 text-3xl" />
             <h3 className="text-xl font-bold text-gray-800">
-              Basic to Job Placement
+              Bike Sales & Showroom
             </h3>
           </div>
           <p className="mt-3 text-gray-600">
-            We ensure students complete{" "}
-            <b>Data Structure, Algorithms, and Software Engineering</b> tracks
-            properly. With <b>resume guidance</b> and{" "}
-            <b>special interview training</b>, you can apply to{" "}
-            <b>local & international companies</b>.
+            Discover a wide range of <b>new and used bikes</b> from trusted
+            brands. Visit our virtual showroom and find your perfect match.
           </p>
         </div>
 
-        {/* Live Project-Based Learning */}
+        {/* Online Booking & Delivery */}
         <div className="bg-green-50 p-6 rounded-lg shadow-md max-w-md border border-green-200 h-64">
           <div className="flex items-center gap-3">
-            <FaLaptopCode className="text-green-500 text-3xl" />
+            <FaShoppingCart className="text-green-500 text-3xl" />
             <h3 className="text-xl font-bold text-gray-800">
-              Live Project-Based Learning
+              Easy Booking & Delivery
             </h3>
           </div>
           <p className="mt-3 text-gray-600">
-            Work on <b>real-world projects</b> with <b>team collaboration</b>{" "}
-            and <b>mentorship</b>. Build an impressive portfolio to showcase
-            your skills to recruiters.
+            Book your favorite bike <b>online</b> and get it delivered
+            <b> to your doorstep</b> with our fast and reliable delivery
+            service.
           </p>
         </div>
 
-        {/* Soft Skills & Communication */}
+        {/* Route Planning Assistance */}
         <div className="bg-yellow-50 p-6 rounded-lg shadow-md max-w-md border border-yellow-200 h-64">
           <div className="flex items-center gap-3">
-            <FaComments className="text-yellow-500 text-3xl" />
+            <FaMapMarkedAlt className="text-yellow-500 text-3xl" />
             <h3 className="text-xl font-bold text-gray-800">
-              Soft Skills & Communication
+              Route & Trip Planning
             </h3>
           </div>
           <p className="mt-3 text-gray-600">
-            Master{" "}
-            <b>
-              interview etiquette, public speaking, and professional
-              communication
-            </b>
-            . Improve your <b>English skills</b> to stand out in the global job
-            market.
+            Get personalized <b>route planning</b> for your bike adventures.
+            Discover the best roads, pit stops, and scenic routes with us.
           </p>
         </div>
 
-        {/* Mock Interviews & Resume Reviews */}
+        {/* Insurance & Safety */}
         <div className="bg-purple-50 p-6 rounded-lg shadow-md max-w-md border border-purple-200 h-64">
           <div className="flex items-center gap-3">
-            <FaFileAlt className="text-purple-500 text-3xl" />
+            <FaShieldAlt className="text-purple-500 text-3xl" />
             <h3 className="text-xl font-bold text-gray-800">
-              Mock Interviews & Resume Reviews
+              Insurance & Safety
             </h3>
           </div>
           <p className="mt-3 text-gray-600">
-            Get <b>personalized resume feedback</b> and participate in{" "}
-            <b>mock interviews</b> with industry experts to boost your
-            confidence before real job applications.
+            Ride worry-free with our <b>insurance options</b> and safety
+            packages. We care about your protection on every journey.
           </p>
         </div>
 
-        {/* Advanced Project Building & Portfolio Guidance */}
+        {/* Customer Support */}
         <div className="bg-orange-50 p-6 rounded-lg shadow-md max-w-md border border-orange-200 h-64">
           <div className="flex items-center gap-3">
-            <FaProjectDiagram className="text-orange-500 text-3xl" />
+            <FaHandshake className="text-orange-500 text-3xl" />
             <h3 className="text-xl font-bold text-gray-800">
-              Advanced Project Building & Portfolio Guidance
+              24/7 Customer Support
             </h3>
           </div>
           <p className="mt-3 text-gray-600">
-            Work on <b>real-world projects</b> and get expert guidance to build
-            a <b>strong portfolio</b> that impresses recruiters and helps you
-            land your dream job.
+            Need help? Our <b>support team</b> is available round-the-clock to
+            assist you with any issue, big or small.
           </p>
         </div>
       </div>

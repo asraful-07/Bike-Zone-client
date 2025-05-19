@@ -1,115 +1,157 @@
 "use client";
 
-import {
-  FaTools,
-  FaMotorcycle,
-  FaShoppingCart,
-  FaMapMarkedAlt,
-  FaShieldAlt,
-  FaHandshake,
-} from "react-icons/fa";
+import { FaBiking, FaTools, FaCheckCircle, FaArrowRight } from "react-icons/fa";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-const Service = () => {
+export default function AboutPage() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
   return (
-    <div className="container mx-auto">
-      <div className="text-center mb-8 mt-20">
-        <h5 className="text-green-600 font-semibold text-sm uppercase bg-green-200 inline-block px-4 py-2 rounded-full mb-5">
-          What We Offer
-        </h5>
-        <h2 className="text-3xl font-bold w-3/4 mx-auto">
-          Explore Our Premium Bike Services – From Purchase to Protection!
-        </h2>
-      </div>
+    <div className="bg-gradient-to-br from-gray-50 to-gray-100 mb-20 py-12 px-6 md:px-16 lg:px-24">
+      <div className="container mx-auto">
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
+          {/* Left Side - Images & Stats */}
+          <div className="w-full lg:w-1/2 flex flex-col gap-8">
+            <div className="relative group">
+              <div
+                data-aos="fade-right"
+                className="relative overflow-hidden rounded-2xl shadow-xl"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80"
+                  alt="Bike enthusiasts riding together"
+                  className="w-full h-auto object-cover rounded-2xl transform group-hover:scale-105 transition duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl" />
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h3 className="text-2xl font-bold">Join Our Community</h3>
+                  <p className="text-gray-200">5,000+ active riders</p>
+                </div>
+              </div>
+            </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center items-center p-12">
-        {/* Bike Repair & Maintenance */}
-        <div className="bg-blue-50 p-6 rounded-lg shadow-md max-w-md border border-blue-200 h-64">
-          <div className="flex items-center gap-3">
-            <FaTools className="text-blue-500 text-3xl" />
-            <h3 className="text-xl font-bold text-gray-800">
-              Repair & Maintenance
-            </h3>
-          </div>
-          <p className="mt-3 text-gray-600">
-            Keep your ride smooth with our expert <b>repair and maintenance</b>
-            services. From engine tuning to tire replacement – we’ve got you
-            covered.
-          </p>
-        </div>
+            <div className="grid grid-cols-2 gap-6">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="200"
+                className="bg-white p-6 rounded-2xl shadow-md flex flex-col items-center text-center hover:shadow-lg transition"
+              >
+                <div className="bg-emerald-100 p-3 rounded-full mb-4">
+                  <FaBiking className="text-emerald-600 text-2xl" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  50+ Tours
+                </h3>
+                <p className="text-gray-600 text-sm">Scenic routes worldwide</p>
+              </div>
 
-        {/* Bike Sales & Showroom */}
-        <div className="bg-red-50 p-6 rounded-lg shadow-md max-w-md border border-red-200 h-64">
-          <div className="flex items-center gap-3">
-            <FaMotorcycle className="text-red-500 text-3xl" />
-            <h3 className="text-xl font-bold text-gray-800">
-              Bike Sales & Showroom
-            </h3>
+              <div
+                data-aos="fade-up"
+                data-aos-delay="400"
+                className="bg-white p-6 rounded-2xl shadow-md flex flex-col items-center text-center hover:shadow-lg transition"
+              >
+                <div className="bg-blue-100 p-3 rounded-full mb-4">
+                  <FaTools className="text-blue-600 text-2xl" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Expert Guides
+                </h3>
+                <p className="text-gray-600 text-sm">Certified professionals</p>
+              </div>
+            </div>
           </div>
-          <p className="mt-3 text-gray-600">
-            Discover a wide range of <b>new and used bikes</b> from trusted
-            brands. Visit our virtual showroom and find your perfect match.
-          </p>
-        </div>
 
-        {/* Online Booking & Delivery */}
-        <div className="bg-green-50 p-6 rounded-lg shadow-md max-w-md border border-green-200 h-64">
-          <div className="flex items-center gap-3">
-            <FaShoppingCart className="text-green-500 text-3xl" />
-            <h3 className="text-xl font-bold text-gray-800">
-              Easy Booking & Delivery
-            </h3>
-          </div>
-          <p className="mt-3 text-gray-600">
-            Book your favorite bike <b>online</b> and get it delivered
-            <b> to your doorstep</b> with our fast and reliable delivery
-            service.
-          </p>
-        </div>
+          {/* Right Side - Content */}
+          <div
+            data-aos="fade-left"
+            data-aos-delay="100"
+            className="w-full lg:w-1/2 space-y-8"
+          >
+            <span className="inline-block bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full font-medium text-sm shadow-sm">
+              About Bike Adventures
+            </span>
 
-        {/* Route Planning Assistance */}
-        <div className="bg-yellow-50 p-6 rounded-lg shadow-md max-w-md border border-yellow-200 h-64">
-          <div className="flex items-center gap-3">
-            <FaMapMarkedAlt className="text-yellow-500 text-3xl" />
-            <h3 className="text-xl font-bold text-gray-800">
-              Route & Trip Planning
-            </h3>
-          </div>
-          <p className="mt-3 text-gray-600">
-            Get personalized <b>route planning</b> for your bike adventures.
-            Discover the best roads, pit stops, and scenic routes with us.
-          </p>
-        </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              Fuel Your{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-blue-600">
+                Riding Passion
+              </span>
+            </h2>
 
-        {/* Insurance & Safety */}
-        <div className="bg-purple-50 p-6 rounded-lg shadow-md max-w-md border border-purple-200 h-64">
-          <div className="flex items-center gap-3">
-            <FaShieldAlt className="text-purple-500 text-3xl" />
-            <h3 className="text-xl font-bold text-gray-800">
-              Insurance & Safety
-            </h3>
-          </div>
-          <p className="mt-3 text-gray-600">
-            Ride worry-free with our <b>insurance options</b> and safety
-            packages. We care about your protection on every journey.
-          </p>
-        </div>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              Bike Adventures is transforming the cycling experience with guided
+              tours, maintenance workshops, and community rides. We connect
+              riders with breathtaking trails and provide the knowledge to enjoy
+              cycling safely and confidently.
+            </p>
 
-        {/* Customer Support */}
-        <div className="bg-orange-50 p-6 rounded-lg shadow-md max-w-md border border-orange-200 h-64">
-          <div className="flex items-center gap-3">
-            <FaHandshake className="text-orange-500 text-3xl" />
-            <h3 className="text-xl font-bold text-gray-800">
-              24/7 Customer Support
-            </h3>
+            <div className="space-y-6">
+              <div
+                data-aos="zoom-in"
+                data-aos-delay="200"
+                className="flex items-start gap-5 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition"
+              >
+                <div className="bg-emerald-100 p-3 rounded-lg flex-shrink-0">
+                  <FaCheckCircle className="text-emerald-600 text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg text-gray-900 mb-1">
+                    Guided Tours
+                  </h3>
+                  <p className="text-gray-600">
+                    Explore scenic routes with our experienced guides who know
+                    the best trails and hidden gems.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                data-aos="zoom-in"
+                data-aos-delay="300"
+                className="flex items-start gap-5 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition"
+              >
+                <div className="bg-blue-100 p-3 rounded-lg flex-shrink-0">
+                  <FaCheckCircle className="text-blue-600 text-xl" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg text-gray-900 mb-1">
+                    Maintenance Workshops
+                  </h3>
+                  <p className="text-gray-600">
+                    Learn essential bike maintenance skills to keep your ride in
+                    top condition all year round.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <button
+                data-aos="fade-up"
+                data-aos-delay="400"
+                className="px-8 py-3.5 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl font-medium hover:from-emerald-600 hover:to-emerald-700 transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+              >
+                Explore Tours <FaArrowRight />
+              </button>
+              <button
+                data-aos="fade-up"
+                data-aos-delay="500"
+                className="px-8 py-3.5 border-2 border-gray-300 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-all shadow-sm hover:shadow-md"
+              >
+                Our Bike Experts
+              </button>
+            </div>
           </div>
-          <p className="mt-3 text-gray-600">
-            Need help? Our <b>support team</b> is available round-the-clock to
-            assist you with any issue, big or small.
-          </p>
         </div>
       </div>
     </div>
   );
-};
-
-export default Service;
+}
