@@ -54,7 +54,8 @@ export default function ContactUs() {
           ></textarea>
         </div>
 
-        <button className="px-6 py-2 bg-emerald-500 text-white border border-emerald-500 rounded-full hover:bg-emerald-600 flex items-center gap-2 w-fit">
+        {/* Gradient orange */}
+        <button className="px-6 py-2 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-full hover:from-orange-600 hover:to-amber-600 transition-all duration-300 flex items-center gap-2 w-fit">
           <FiSend /> SEND MESSAGE
         </button>
       </div>
@@ -72,14 +73,14 @@ export default function ContactUs() {
         <div className="space-y-2">
           <h2 className="text-xl font-semibold">Contact Information</h2>
           <div className="flex items-center gap-2 text-lg text-gray-600">
-            <FiMapPin className="text-emerald-500" /> Brooklyn, NY 10036, United
+            <FiMapPin className="text-orange-600" /> Brooklyn, NY 10036, United
             States
           </div>
           <div className="flex items-center gap-2 text-lg text-gray-600">
-            <FiPhone className="text-emerald-500" /> 1-800-123-1234
+            <FiPhone className="text-orange-600" /> 1-800-123-1234
           </div>
           <div className="flex items-center gap-2 text-lg text-gray-600">
-            <FiMail className="text-emerald-500" /> example@language-school.com
+            <FiMail className="text-orange-600" /> example@language-school.com
           </div>
         </div>
 
@@ -87,10 +88,10 @@ export default function ContactUs() {
           <h2 className="text-xl font-semibold mb-2">Social Media</h2>
           <div className="flex gap-4">
             <button className="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-full hover:bg-emerald-50 text-sm">
-              <FaTwitter className="text-emerald-500" /> TWITTER
+              <FaTwitter className="text-orange-600" /> TWITTER
             </button>
             <button className="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-full hover:bg-emerald-50 text-sm">
-              <FaFacebookF className="text-emerald-500" /> FACEBOOK
+              <FaFacebookF className="text-orange-600" /> FACEBOOK
             </button>
           </div>
         </div>
