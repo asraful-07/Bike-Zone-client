@@ -1,9 +1,10 @@
 import React from "react";
+import AboutUs from "@/app/components/About/AboutUs";
 
 const page = () => {
   return (
     <div>
-      <h1>about</h1>
+      <AboutUs />
     </div>
   );
 };
