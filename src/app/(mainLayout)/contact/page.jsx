@@ -1,9 +1,14 @@
 import React from "react";
+import Map from "@/app/components/Contact/Map";
+import ContactUs from "@/app/components/Contact/ContactUs";
+import FAQ from "@/app/components/Contact/FAQ";
 
 const page = () => {
   return (
     <div>
-      <h1>contact</h1>
+      <Map />
+      <ContactUs />
+      <FAQ />
     </div>
   );
 };
