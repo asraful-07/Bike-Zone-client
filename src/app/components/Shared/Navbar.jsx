@@ -1,31 +1,68 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { AuthContext } from "@/Provider/AuthProvider";
+import {
+  FaUserAlt,
+  FaSignInAlt,
+  FaUserPlus,
+  FaSignOutAlt,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
 
 const Navbar = () => {
+  const { user, handleLogout } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+  const userMenuRef = useRef(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
+        setIsUserMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   // Check if a link is active
   const isActive = (href) => {
     return pathname === href || (href !== "/" && pathname.startsWith(href));
   };
 
-  // List of paths where footer should be hidden
+  // List of paths where navbar should be hidden
   const hiddenPaths = [
-    "Login",
-    "SignUp",
-    "Admin-dashboard",
-    "Seller-dashboard",
-    "User-dashboard",
+    "/login",
+    "/register",
+    "/admin-dashboard",
+    "/seller-dashboard",
+    "/user-dashboard",
   ];
 
-  // Check if current path should hide footer
+  // Check if current path should hide navbar
   if (hiddenPaths.some((path) => pathname.includes(path))) {
     return null;
   }
+
+  const handleLogoutClick = async () => {
+    try {
+      await handleLogout();
+      setIsUserMenuOpen(false);
+      router.push("/");
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
+  };
 
   return (
     <nav className="bg-primary text-white px-4 py-3 shadow-md sticky top-0 z-50">
@@ -84,9 +121,74 @@ const Navbar = () => {
               <span className="absolute left-0 bottom-0 h-0.5 w-full bg-secondary" />
             )}
           </Link>
-          <button className="bg-secondary px-4 py-2 rounded hover:bg-orange-600 transition-colors">
-            Book a Ride
-          </button>
+
+          {/* User Avatar with Dropdown */}
+          <div className="relative" ref={userMenuRef}>
+            <button
+              onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+              className="flex items-center gap-2 focus:outline-none"
+            >
+              {user?.photoURL ? (
+                <img
+                  alt="User"
+                  className="w-8 h-8 object-cover rounded-full ring ring-my-primary ring-offset-2"
+                  src={user?.photoURL}
+                />
+              ) : (
+                <div className="bg-lite p-2 rounded-full">
+                  <FaUserAlt className="text-xl text-my-primary" />
+                </div>
+              )}
+            </button>
+
+            {isUserMenuOpen && (
+              <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                {user ? (
+                  <>
+                    <Link
+                      href={
+                        user.role === "admin"
+                          ? "/admin-dashboard"
+                          : user.role === "seller"
+                          ? "/seller-dashboard"
+                          : "/user-dashboard"
+                      }
+                      onClick={() => setIsUserMenuOpen(false)}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Dashboard
+                    </Link>
+                    <button
+                      onClick={handleLogoutClick}
+                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2"
+                    >
+                      <FaSignOutAlt />
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      href="/login"
+                      onClick={() => setIsUserMenuOpen(false)}
+                      className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2"
+                    >
+                      <FaSignInAlt />
+                      Sign In
+                    </Link>
+                    <Link
+                      href="/register"
+                      onClick={() => setIsUserMenuOpen(false)}
+                      className=" px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2"
+                    >
+                      <FaUserPlus />
+                      Sign Up
+                    </Link>
+                  </>
+                )}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile Toggle */}
@@ -95,7 +197,11 @@ const Navbar = () => {
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          <span className="material-icons">{isOpen ? "close" : "menu"}</span>
+          {isOpen ? (
+            <FaTimes className="text-xl" />
+          ) : (
+            <FaBars className="text-xl" />
+          )}
         </button>
       </div>
 
@@ -138,9 +244,49 @@ const Navbar = () => {
           >
             Contact
           </Link>
-          <button className="bg-secondary w-full text-center px-4 py-2 mt-2 rounded hover:bg-orange-600 transition-colors">
-            Book a Ride
-          </button>
+
+          {user ? (
+            <div className="space-y-2">
+              <Link
+                href={
+                  user.role === "admin"
+                    ? "/admin-dashboard"
+                    : user.role === "seller"
+                    ? "/seller-dashboard"
+                    : "/user-dashboard"
+                }
+                onClick={() => setIsOpen(false)}
+                className="block w-full text-center bg-secondary px-4 py-2 rounded hover:bg-orange-600 transition-colors"
+              >
+                Dashboard
+              </Link>
+              <button
+                onClick={handleLogoutClick}
+                className="w-full text-center bg-gray-700 px-4 py-2 rounded hover:bg-gray-600 transition-colors"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <div className="space-y-2">
+              <Link
+                href="/login"
+                onClick={() => setIsOpen(false)}
+                className="w-full text-center bg-secondary px-4 py-2 rounded hover:bg-orange-600 transition-colors flex items-center justify-center gap-2"
+              >
+                <FaSignInAlt />
+                Sign In
+              </Link>
+              <Link
+                href="/register"
+                onClick={() => setIsOpen(false)}
+                className="w-full text-center bg-gray-700 px-4 py-2 rounded hover:bg-gray-600 transition-colors flex items-center justify-center gap-2"
+              >
+                <FaUserPlus />
+                Sign Up
+              </Link>
+            </div>
+          )}
         </div>
       )}
     </nav>
@@ -148,14 +294,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-{
-  /* <div className="cursor-pointer">
-      {user?.photoURL ? (
-        <img alt="User" className="w-8 h-8 object-cover rounded-full ring ring-my-primary  ring-offset-2" src={user?.photoURL} />
-      ) : (
-        <p className="bg-lite p-2 rounded-full ">
-          <FaUserAlt className="text-xl text-my-primary " />
-        </p>
-      )}
-    </div> */
-}
