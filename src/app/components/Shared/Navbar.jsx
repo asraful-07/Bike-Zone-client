@@ -21,7 +21,6 @@ const Navbar = () => {
   const router = useRouter();
   const userMenuRef = useRef(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
