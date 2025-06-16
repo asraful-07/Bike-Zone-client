@@ -145,13 +145,7 @@ const Navbar = () => {
                 {user ? (
                   <>
                     <Link
-                      href={
-                        user.role === "admin"
-                          ? "/admin-dashboard"
-                          : user.role === "seller"
-                          ? "/seller-dashboard"
-                          : "/user-dashboard"
-                      }
+                      href="/Seller-dashboard"
                       onClick={() => setIsUserMenuOpen(false)}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
