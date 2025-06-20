@@ -220,7 +220,6 @@ const FAQAndReview = () => {
               modules={[Autoplay, EffectFade]}
               className="h-full"
             >
-              dgfsd
               {reviews.map((review, index) => (
                 <SwiperSlide key={index}>
                   <div className="p-8">
