@@ -227,7 +227,7 @@ const FAQAndReview = () => {
                       <img
                         src={review.image}
                         alt={review.name}
-                        className="w-14 h-14 rounded-full object-cover border-2 border-orange-200"
+                        className="w-24 h-24 rounded-full object-cover border-2 border-orange-200"
                       />
                       <div className="ml-4">
                         <h4 className="font-bold text-gray-800">
@@ -253,18 +253,6 @@ const FAQAndReview = () => {
                       <FaQuoteLeft className="text-orange-200 text-3xl absolute left-0 top-0" />
                       {review.text}
                     </p>
-                    <div className="mt-8 pt-6 border-t border-gray-100">
-                      <div className="flex justify-center space-x-2">
-                        {reviews.map((_, i) => (
-                          <span
-                            key={i}
-                            className={`block w-2 h-2 rounded-full ${
-                              i === index ? "bg-orange-600" : "bg-gray-300"
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    </div>
                   </div>
                 </SwiperSlide>
               ))}
