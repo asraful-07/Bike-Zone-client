@@ -80,20 +80,28 @@ const Bike = () => {
               </div>
 
               <div className="p-5">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-2xl font-bold text-orange-600 line-through">
-                      ${bike.regularPrice}
-                    </p>
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center gap-2">
                     <p className="text-2xl font-bold text-orange-600">
                       ${bike.discountPrice}
                     </p>
+                    {bike.discountPrice < bike.regularPrice && (
+                      <p className="text-sm text-gray-500 line-through">
+                        ${bike.regularPrice}
+                      </p>
+                    )}
+                    {bike.discountPrice < bike.regularPrice && (
+                      <span className="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-0.5 rounded">
+                        Save ${bike.regularPrice - bike.discountPrice}
+                      </span>
+                    )}
                   </div>
 
-                  <Link href={`/bikes/${bike._id}`}>
-                    <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-colors">
-                      View Details
-                    </button>
+                  <Link
+                    href={`/bikes/${bike._id}`}
+                    className="w-full text-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200"
+                  >
+                    View Details
                   </Link>
                 </div>
               </div>

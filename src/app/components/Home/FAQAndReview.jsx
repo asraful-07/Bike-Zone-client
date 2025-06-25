@@ -8,7 +8,6 @@ import "swiper/css/effect-fade";
 import { Autoplay, EffectFade } from "swiper/modules";
 import {
   FaQuoteLeft,
-  FaQuestionCircle,
   FaChevronDown,
   FaChevronRight,
   FaMotorcycle,
@@ -50,7 +49,7 @@ const FAQAndReview = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 ">
       <div className="text-center mb-16">
         <div className="flex items-center justify-center gap-2 mb-4">
           <FaMotorcycle className="text-orange-500 text-xl" />
@@ -206,7 +205,7 @@ const FAQAndReview = () => {
         </div>
 
         {/* Review Section */}
-        <div className="w-full">
+        <div className="w-full bg-orange-50">
           <div className="overflow-hidden h-full">
             <Swiper
               spaceBetween={30}
@@ -223,7 +222,7 @@ const FAQAndReview = () => {
               {reviews.map((review, index) => (
                 <SwiperSlide key={index}>
                   <div className="p-8">
-                    <div className="flex items-center mb-6">
+                    <div className="flex items-center justify-center mb-12">
                       <img
                         src={review.image}
                         alt={review.name}

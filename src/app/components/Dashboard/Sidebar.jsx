@@ -122,7 +122,7 @@ const Sidebar = () => {
           </Link>
 
           <Link
-            href="/Seller-dashboard/orders"
+            href="/Seller-dashboard/order-bike"
             className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-300
               ${
                 activeLink === "orders"
