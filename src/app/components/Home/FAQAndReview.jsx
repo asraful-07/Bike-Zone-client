@@ -67,7 +67,7 @@ const FAQAndReview = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2">
-        {/* FAQ Section */}
+        {/* FAQ Section Right */}
         <div className="w-full">
           <div className="space-y-4">
             {/* FAQ Item 1 */}
@@ -204,7 +204,7 @@ const FAQAndReview = () => {
           </div>
         </div>
 
-        {/* Review Section */}
+        {/* Review Section Left */}
         <div className="w-full bg-orange-50">
           <div className="overflow-hidden h-full">
             <Swiper
